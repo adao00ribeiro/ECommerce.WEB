@@ -1,0 +1,34 @@
+@import 'variables';
+
+
+.max1170 {
+    max-width: 1170px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+
+}
+
+.newsletter {
+    background-color: $color-primary;
+
+    div {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+a {
+
+    img {
+        width: 100%;
+    }
+}
