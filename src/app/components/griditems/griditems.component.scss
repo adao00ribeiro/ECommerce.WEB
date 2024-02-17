@@ -1,0 +1,71 @@
+@import 'variables.scss';
+
+
+
+.container-top {
+  display: flex;
+  background-color: $color-background-second;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+
+  .toggle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    a {
+      padding: 10px;
+      background-color: aqua;
+      border-radius: 5px;
+    }
+  }
+
+  .select {
+    display: flex;
+    gap: 5px;
+  }
+
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  overflow: hidden;
+  /* Garante que qualquer conteúdo excedente seja ocultado */
+
+  position: relative;
+
+  .card-item {
+
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+
+    border: 1px solid rgba(92, 92, 92, 0.267);
+
+    img {
+      flex-grow: 2;
+      max-width: 100%;
+      height: auto;
+
+    }
+
+    h4 {
+      flex-grow: 0;
+
+      font-size: 18px;
+
+    }
+
+    p {
+      margin-top: 1rem;
+      flex-grow: 0;
+
+      font-size: 16px;
+    }
+  }
+}
