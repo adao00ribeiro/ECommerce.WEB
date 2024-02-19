@@ -13,7 +13,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
-.button-primary{
+
+.button-primary {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,34 +30,50 @@ body {
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: $color-background-primary;
   }
 }
 
-.button-secondary{
+.button-secondary {
   display: flex;
   align-items: center;
-   justify-content: center;
+  justify-content: center;
   padding: 8px 22px;
   font-size: 14px;
-    font-weight: bold;
+  font-weight: bold;
   text-transform: capitalize;
   line-height: 1.2;
   background-color: #fff;
-  color:  $color-second;
+  color: $color-second;
   border: 1px solid $color-second;
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: $color-background-second;
   }
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+
+  &-thumb {
+    background-color: rgba($color-second, .2);
+    border-radius: 10px;
+  }
+
+  &-track {
+    background: transparent;
+  }
+}
+
 h2 {
   text-align: center;
   color: $color-second;
 }
+
+
 
 .flex {
   display: flex;
