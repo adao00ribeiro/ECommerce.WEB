@@ -13,10 +13,7 @@ export class CarouselComponent implements OnInit {
 
   @Input() images: ICaroselImage[] = [
     { src: 'assets/images/teste/banner1.jpg', alt: 'Image 1' },
-    { src: 'assets/images/teste/banner2.jpg', alt: 'Image 2' },
-    { src: 'assets/images/teste/banner3.jpg', alt: 'Image 3' },
-    { src: 'assets/images/teste/banner4.jpg', alt: 'Image 4' },
-
+    { src: 'assets/images/teste/banner2.webp', alt: 'Image 2' },
   ];
 
   currentIndex = 0;

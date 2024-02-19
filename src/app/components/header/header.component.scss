@@ -51,15 +51,25 @@
                         color: $color-second;
                         gap: 0.5rem;
 
-                        ng-icon {
-                            font-size: 1.5rem;
-                        }
+
 
                         &:hover {
                             color: #ff6600; // Cor dos links do menu ao passar o mouse
                         }
                     }
+                    button{
+                      background-color: transparent;
+                      border: none;
+                      cursor: pointer;
+                      color: $color-second;
+                      ng-icon {
 
+                        font-size: 1.4rem;
+                    }
+                    &:hover {
+                      color: #ff6600; // Cor dos links do menu ao passar o mouse
+                  }
+                    }
                     .dropdown-menu {
 
                         -webkit-transition: all 0.3s ease-in-out;

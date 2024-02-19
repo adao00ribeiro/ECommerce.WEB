@@ -38,9 +38,9 @@
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/produtos">
+                        <button (click)="SetSideCart()" >
                             <ng-icon name="bootstrapCart"></ng-icon>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -59,4 +59,6 @@
     </div>
 
 </header>
-<app-sidecart></app-sidecart>
+@if(IsShowSideCart){
+  <app-sidecart (clickExit)="SetSideCart()" ></app-sidecart>
+}

@@ -16,4 +16,11 @@ import { SidecartComponent } from '../sidecart/sidecart.component';
 export class HeaderComponent {
 
   showDropdown: boolean = false;
+  IsShowSideCart: boolean = true;
+
+
+
+  SetSideCart(){
+    this.IsShowSideCart = !this.IsShowSideCart;
+  }
 }
