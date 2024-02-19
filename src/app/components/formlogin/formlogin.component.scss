@@ -1,0 +1,27 @@
+:host {
+    width: 100%;
+
+    form {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input {
+            padding: 5px;
+            height: 35px;
+        }
+    }
+
+
+    .login-signup {
+        margin-top: 5rem;
+        text-align: center;
+
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+    }
+}
