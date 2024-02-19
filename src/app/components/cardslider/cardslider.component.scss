@@ -1,0 +1,46 @@
+.cardslider {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+
+
+
+    .container-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 2rem;
+        padding: 5rem;
+        overflow-x: auto;
+        max-height: 100%;
+
+        .cardslider-item {
+            width: 300px;
+        }
+    }
+
+    .cardslider-control-prev,
+    .cardslider-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .cardslider-control-prev {
+        left: 10px;
+    }
+
+    .cardslider-control-next {
+        right: 10px;
+    }
+
+
+
+}

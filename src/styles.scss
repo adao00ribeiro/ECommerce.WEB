@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import 'variables.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.button-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.2;
+  background-color: $color-primary;
+  color: #fff;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-background-primary;
+  }
+}
+
+.button-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.2;
+  background-color: #fff;
+  color: $color-second;
+  border: 1px solid $color-second;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-background-second;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+
+  &-thumb {
+    background-color: rgba($color-second, .2);
+    border-radius: 10px;
+  }
+
+  &-track {
+    background: transparent;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: $color-second;
+}
+
+
+
+.flex {
+  display: flex;
+
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.g-2 {
+  gap: 2rem;
+}
+
+.titulo {
+  color: $color-primary;
+  display: block;
+  font-weight: 700;
+
+  &-bg {
+    @extend .titulo;
+    font-size: 2.2rem;
+  }
+
+  &-md {
+    @extend .titulo;
+    font-size: 1.4rem;
+  }
+}
+
+.mt {
+  @for $i from 1 to 10 {
+    &-#{ $i } {
+      margin-top: #{ $i }vh;
+    }
+  }
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.card {
+  box-shadow: 0px 0px 15px $black-transparent-03;
+  background-color: $white;
+  border-radius: 10px;
+}

@@ -1,0 +1,67 @@
+<header class="header ">
+    <div class="container">
+        <div class="header-container">
+            <div class="logo">
+                <a routerLink="">
+                    <img src="assets/images/logo.jpg" alt="Nome da Empresa">
+                </a>
+            </div>
+            <app-inputsearch></app-inputsearch>
+            <nav class="nav">
+                <ul>
+                    <li (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
+                        <a routerLink="">
+                            <ng-icon name="heroUser">
+                            </ng-icon>
+                            Conta
+                        </a>
+
+                        <!-- Novo elemento div para encapsular o conteúdo do dropdown -->
+                        @if(showDropdown){
+                        <ul class="dropdown-menu" (mouseenter)="showDropdown = true"
+                            (mouseleave)="showDropdown = false">
+                            <a (click)="modalservice.open('modal-login')">
+                                Login
+                            </a>
+                            <a routerLink=" /produtos">
+                                Registrar
+                            </a>
+                        </ul>
+                        }
+
+                    </li>
+                    <li>
+                        <a routerLink="/produtos">
+                            <ng-icon name="bootstrapHeart"></ng-icon>
+                            Lista de Desejos
+
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="SetSideCart()">
+                            <ng-icon name="bootstrapCart"></ng-icon>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-fix">
+            <nav class="nav">
+                <ul>
+                    <li><a routerLink="/home">Esmaltes</a></li>
+                    <li><a routerLink="/contato">Decoração</a></li>
+                    <li><a routerLink="/contato">Novidades</a></li>
+                    <li><a routerLink="/contato">Ofertas</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+</header>
+@if(IsShowSideCart){
+<app-sidecart (clickExit)="SetSideCart()"></app-sidecart>
+}
+<app-modal id="modal-login">
+    <app-formlogin></app-formlogin>
+</app-modal>
