@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Type, ViewChild, computed, effect } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapCart, bootstrapHeart } from '@ng-icons/bootstrap-icons'
@@ -8,10 +8,14 @@ import { SidecartComponent } from '../sidecart/sidecart.component';
 import { ModalComponent } from '../modal/modal.component';
 import { FormloginComponent } from '../formlogin/formlogin.component';
 import { ModalService } from '../../services/modal.service';
+import { IDynamicComponent } from '../../Interface/IDynamicComponent';
+import { FormregisterComponent } from '../formregister/formregister.component';
+import { DynamicComponentDirective } from '../../Directives/DynamicComponent.directive';
+import { DynamicComponentService } from '../../services/DynamicComponent.service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, NgIconComponent, InputsearchComponent, SidecartComponent, ModalComponent, FormloginComponent],
+  imports: [RouterLink, NgIconComponent, InputsearchComponent, SidecartComponent, ModalComponent, DynamicComponentDirective],
   viewProviders: [provideIcons({ heroUser, bootstrapHeart, bootstrapCart }), ModalService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -19,11 +23,42 @@ import { ModalService } from '../../services/modal.service';
 export class HeaderComponent {
 
   showDropdown: boolean = false;
-  IsShowSideCart: boolean = true;
+  IsShowSideCart: boolean = false;
+  IsShowModal: boolean = true;
+  @ViewChild(DynamicComponentDirective) DynamicComponentDirective!: DynamicComponentDirective;
 
-  constructor(protected modalservice: ModalService) { }
+  constructor(protected modalservice: ModalService, private dynamicService: DynamicComponentService) {
+
+    effect(() => {
+      if (this.IsShowModal) {
+        this.loadComponent();
+      }
+    });
+  }
+
 
   SetSideCart() {
     this.IsShowSideCart = !this.IsShowSideCart;
+  }
+  loadFormLoginComponent() {
+    this.IsShowModal = true;
+    this.dynamicService.setcomponent(FormloginComponent);
+    this.loadComponent();
+
+  }
+  loadFormRegisterComponent() {
+    this.IsShowModal = true;
+    this.dynamicService.setcomponent(FormregisterComponent);
+    this.loadComponent();
+  }
+  loadComponent() {
+
+    const viewContainerRef = this.DynamicComponentDirective.viewContainerRef;
+    viewContainerRef.clear();
+
+    const componentRef = viewContainerRef.createComponent<IDynamicComponent>(
+      this.dynamicService.GetComponent()
+    );
+    this.modalservice.open('modal')
   }
 }

@@ -23,11 +23,9 @@ export class CarouselComponent implements OnInit {
   }
   prevSlide() {
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    console.log(this.currentIndex)
   }
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    console.log(this.currentIndex)
   }
 }

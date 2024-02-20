@@ -55,6 +55,16 @@ body {
   }
 }
 
+input {
+  flex: 1;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  outline: #f20808;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 

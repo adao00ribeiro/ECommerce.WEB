@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IDynamicComponent } from '../../Interface/IDynamicComponent';
+import { DynamicComponentService } from '../../services/DynamicComponent.service';
+import { FormregisterComponent } from '../formregister/formregister.component';
 
 @Component({
   selector: 'app-formlogin',
@@ -7,6 +10,14 @@ import { Component } from '@angular/core';
   templateUrl: './formlogin.component.html',
   styleUrl: './formlogin.component.scss'
 })
-export class FormloginComponent {
+export class FormloginComponent implements IDynamicComponent {
+  constructor(private dynamicService: DynamicComponentService) {
 
+  }
+
+
+  loadFormRegisterComponent() {
+
+    this.dynamicService.setcomponent(FormregisterComponent);
+  }
 }
