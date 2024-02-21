@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICaroselImage } from './interface/ICaroselImage';
 import { CommonModule } from '@angular/common';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { bootstrapArrowLeftCircle ,bootstrapArrowRightCircle} from '@ng-icons/bootstrap-icons'
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgIconComponent],
+  viewProviders: [provideIcons({bootstrapArrowLeftCircle,bootstrapArrowRightCircle })],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
