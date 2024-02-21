@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Type, ViewChild, computed, effect } from '@angular/core';
+import { AfterViewInit, Component, Type, ViewChild, computed, effect, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapCart, bootstrapHeart } from '@ng-icons/bootstrap-icons'
@@ -16,7 +16,7 @@ import { DynamicComponentService } from '../../services/DynamicComponent.service
   selector: 'app-header',
   standalone: true,
   imports: [RouterLink, NgIconComponent, InputsearchComponent, SidecartComponent, ModalComponent, DynamicComponentDirective],
-  viewProviders: [provideIcons({ heroUser, bootstrapHeart, bootstrapCart }), ModalService],
+  viewProviders: [provideIcons({ heroUser, bootstrapHeart, bootstrapCart })],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -24,13 +24,13 @@ export class HeaderComponent {
 
   showDropdown: boolean = false;
   IsShowSideCart: boolean = false;
-  IsShowModal: boolean = true;
+  IsShowModal= signal(false);
   @ViewChild(DynamicComponentDirective) DynamicComponentDirective!: DynamicComponentDirective;
 
   constructor(protected modalservice: ModalService, private dynamicService: DynamicComponentService) {
 
     effect(() => {
-      if (this.IsShowModal) {
+      if(this.IsShowModal()){
         this.loadComponent();
       }
     });
@@ -41,24 +41,20 @@ export class HeaderComponent {
     this.IsShowSideCart = !this.IsShowSideCart;
   }
   loadFormLoginComponent() {
-    this.IsShowModal = true;
+    this.IsShowModal.set(true);
     this.dynamicService.setcomponent(FormloginComponent);
-    this.loadComponent();
-
   }
   loadFormRegisterComponent() {
-    this.IsShowModal = true;
+    this.IsShowModal.set(true);
     this.dynamicService.setcomponent(FormregisterComponent);
-    this.loadComponent();
   }
   loadComponent() {
-
     const viewContainerRef = this.DynamicComponentDirective.viewContainerRef;
     viewContainerRef.clear();
-
     const componentRef = viewContainerRef.createComponent<IDynamicComponent>(
       this.dynamicService.GetComponent()
     );
+
     this.modalservice.open('modal')
   }
 }
