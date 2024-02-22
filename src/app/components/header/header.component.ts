@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Type, ViewChild, computed, effect, signal } from '@angular/core';
+import { AfterViewInit, Component, Injector, OnInit, Type, ViewChild, computed, effect, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapCart, bootstrapHeart } from '@ng-icons/bootstrap-icons'
@@ -20,32 +20,49 @@ import { DynamicComponentService } from '../../services/DynamicComponent.service
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
 
   showDropdown: boolean = false;
   IsShowSideCart: boolean = false;
-  IsShowModal= signal(false);
+
   @ViewChild(DynamicComponentDirective) DynamicComponentDirective!: DynamicComponentDirective;
+  @ViewChild(ModalComponent) modalcomponent!: ModalComponent;
 
-  constructor(protected modalservice: ModalService, private dynamicService: DynamicComponentService) {
+  constructor(protected modalservice: ModalService, private dynamicService: DynamicComponentService, private injector: Injector) {
 
-    effect(() => {
-      if(this.IsShowModal()){
-        this.loadComponent();
-      }
-    });
   }
 
+  ngAfterViewInit(): void {
+    // Executa após a visualização dos componentes filhos
+    this.waitForModalComponent();
+  }
+  waitForModalComponent(): void {
+    if (this.modalcomponent) {
 
+      // O componente modal está pronto
+      const isOpenSignal = this.modalservice.GetIsOpenModal('modal');
+
+      effect(() => {
+        if (isOpenSignal()) {
+
+          this.loadComponent();
+        }
+      }, { injector: this.injector });
+
+    } else {
+      // Tenta novamente após um pequeno intervalo
+      setTimeout(() => this.waitForModalComponent(), 100);
+    }
+  }
   SetSideCart() {
     this.IsShowSideCart = !this.IsShowSideCart;
   }
   loadFormLoginComponent() {
-    this.IsShowModal.set(true);
+    this.modalservice.open('modal')
     this.dynamicService.setcomponent(FormloginComponent);
   }
   loadFormRegisterComponent() {
-    this.IsShowModal.set(true);
+    this.modalservice.open('modal')
     this.dynamicService.setcomponent(FormregisterComponent);
   }
   loadComponent() {
@@ -54,7 +71,5 @@ export class HeaderComponent {
     const componentRef = viewContainerRef.createComponent<IDynamicComponent>(
       this.dynamicService.GetComponent()
     );
-
-    this.modalservice.open('modal')
   }
 }

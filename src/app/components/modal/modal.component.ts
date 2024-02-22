@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, signal } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { ModalService } from '../../services/modal.service';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() id?: string;
-  isOpen = false;
+  isOpen = signal(false);
+
   private element: any;
 
   constructor(protected modalService: ModalService, private el: ElementRef) {
@@ -42,13 +43,13 @@ export class ModalComponent implements OnInit, OnDestroy {
   open() {
     this.element.style.display = 'block';
     document.body.classList.add('jw-modal-open');
-    this.isOpen = true;
+    this.isOpen.set(true);
   }
 
   close() {
     this.element.style.display = 'none';
     document.body.classList.remove('jw-modal-open');
-    this.isOpen = false;
+    this.isOpen.set(false);
   }
 
 }
