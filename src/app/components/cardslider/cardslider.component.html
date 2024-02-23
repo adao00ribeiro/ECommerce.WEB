@@ -1,14 +1,11 @@
 <div class="cardslider">
-
-    <div class="container-cards">
-      @for (item of products; track $index) {
-        <app-carditem [id]="item.id" [imageUrl]="item.imageUrl" [name]="item.name" [price]="item.price" class="cardslider-item"></app-carditem>
-      }
-    </div>
-    <button class="cardslider-control-prev" (click)="prevSlide()">
-      <ng-icon name="bootstrapArrowLeftCircle"></ng-icon>
-    </button>
-    <button class="cardslider-control-next" (click)="nextSlide()">
-      <ng-icon name="bootstrapArrowRightCircle"></ng-icon>
-    </button>
+  <div class="container-cards">
+    <ng-content></ng-content>
+  </div>
+  <button class="cardslider-control-prev" (click)="prevSlide()">
+    <ng-icon name="bootstrapArrowLeftCircle"></ng-icon>
+  </button>
+  <button class="cardslider-control-next" (click)="nextSlide()">
+    <ng-icon name="bootstrapArrowRightCircle"></ng-icon>
+  </button>
 </div>

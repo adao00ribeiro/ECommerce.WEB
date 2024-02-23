@@ -55,10 +55,11 @@ body {
   }
 }
 
-select{
+select {
   border: 1px solid $color-second;
   border-radius: 0.2rem;
 }
+
 input {
   flex: 1;
   border: none;
@@ -72,6 +73,7 @@ input {
 
 ::-webkit-scrollbar {
   width: 7px;
+  height: 5px;
 
   &-thumb {
     background-color: rgba($color-second, .2);

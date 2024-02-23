@@ -22,14 +22,22 @@
 <section class="section max1170">
     <h2>Nossas Novidades</h2>
     <div class="cardslider">
-        <app-cardslider [products]="productNews" class="cardslider"></app-cardslider>
+        <app-cardslider class="cardslider">
+            @for (item of productNews; track $index) {
+            <app-carditem [id]="item.id" [name]="item.name" [price]="item.price" [imageUrl]="item.imageUrl">
+            </app-carditem>
+            }
+
+        </app-cardslider>
     </div>
 
 </section>
 <section class="section max1170">
     <h2>Nossas Marcas</h2>
     <div class="cardslider">
-        <app-cardslider class="cardslider"></app-cardslider>
+        <app-cardslider class="cardslider">
+            <app-brands></app-brands>
+        </app-cardslider>
     </div>
 
 </section>
@@ -41,7 +49,5 @@
         <input type="text" placeholder="Email">
         <button>></button>
     </div>
-
-
 </section>
- <h2>Siga nosso Instagram {{'@INSTAGRAMDEMO'}} </h2>
+<h2>Siga nosso Instagram {{'@INSTAGRAMDEMO'}} </h2>
