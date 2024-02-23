@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CarditemComponent } from '../carditem/carditem.component';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapArrowLeftCircle ,bootstrapArrowRightCircle} from '@ng-icons/bootstrap-icons'
+import { IProduct } from '../../mock/IProduct';
 
 @Component({
   selector: 'app-cardslider',
@@ -12,6 +13,10 @@ import { bootstrapArrowLeftCircle ,bootstrapArrowRightCircle} from '@ng-icons/bo
   styleUrl: './cardslider.component.scss'
 })
 export class CardsliderComponent implements OnInit {
+
+  @Input()
+  products : IProduct[] = []
+
   currentIndex = 0;
 
   ngOnInit(): void {
