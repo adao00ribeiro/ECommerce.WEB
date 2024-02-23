@@ -1,21 +1,14 @@
 :host {
     width: 100%;
+    margin-bottom: 1rem;
 
     form {
-
         width: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        gap: 1rem;
 
-        input {
-            flex: 1;
-            padding: 5px;
-            height: 35px;
-            border: 1px solid red;
-        }
+        gap: 1rem;
 
         select {
             flex: 1;
@@ -30,6 +23,17 @@
         width: 100%;
         display: flex;
         flex-direction: row;
+
+        gap: 1rem;
+
+        input{
+          padding: 5px;
+          height: 35px;
+        }
+        select{
+          padding: 5px;
+          height: 35px;
+        }
     }
 
 }
