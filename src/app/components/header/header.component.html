@@ -10,13 +10,11 @@
             <nav class="nav">
                 <ul>
                     <li (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
-                        <a routerLink="">
+                        <a >
                             <ng-icon name="heroUser">
                             </ng-icon>
                             Conta
                         </a>
-
-                        <!-- Novo elemento div para encapsular o conteúdo do dropdown -->
                         @if(showDropdown){
                         <ul class="dropdown-menu" (mouseenter)="showDropdown = true"
                             (mouseleave)="showDropdown = false">
@@ -28,13 +26,11 @@
                             </a>
                         </ul>
                         }
-
                     </li>
                     <li>
                         <a routerLink="/wishlist">
                             <ng-icon name="bootstrapHeart"></ng-icon>
                             Lista de Desejos
-
                         </a>
                     </li>
                     <li>
