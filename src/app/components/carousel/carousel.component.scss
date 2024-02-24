@@ -45,6 +45,15 @@
         right: 10px;
     }
 
+    button{
+      border: none;
+      background-color: transparent;
 
+      ng-icon{
+        color: rgb(196, 168, 193);
+        border: none;
+        font-size: 2rem;
+      }
+    }
 
 }

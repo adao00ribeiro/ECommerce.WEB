@@ -1,18 +1,11 @@
 <div class="cardslider">
-
-    <div class="container-cards">
-        <app-carditem class="cardslider-item"></app-carditem>
-        <app-carditem class="cardslider-item"></app-carditem>
-        <app-carditem class="cardslider-item"></app-carditem>
-        <app-carditem class="cardslider-item"></app-carditem>
-        <app-carditem class="cardslider-item"></app-carditem>
-    </div>
-
-
-    <button class="cardslider-control-prev" (click)="prevSlide()">
-        <span class="fas fa-chevron-left"></span>
-    </button>
-    <button class="cardslider-control-next" (click)="nextSlide()">
-        <span class="fas fa-chevron-right"></span>
-    </button>
+  <div class="container-cards">
+    <ng-content></ng-content>
+  </div>
+  <button class="cardslider-control-prev" (click)="prevSlide()">
+    <ng-icon name="bootstrapArrowLeftCircle"></ng-icon>
+  </button>
+  <button class="cardslider-control-next" (click)="nextSlide()">
+    <ng-icon name="bootstrapArrowRightCircle"></ng-icon>
+  </button>
 </div>

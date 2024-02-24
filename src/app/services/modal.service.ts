@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { ModalComponent } from '../components/modal/modal.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ModalService {
+
   private modals: ModalComponent[] = [];
+
   constructor() { }
 
   add(modal: ModalComponent) {
@@ -22,21 +24,29 @@ export class ModalService {
     // remove modal from array of active modals
     this.modals = this.modals.filter(x => x === modal);
   }
-
-  open(id: string) {
-    // open modal specified by id
+  GetIsOpenModal(id: string) {
     const modal = this.modals.find(x => x.id === id);
 
     if (!modal) {
       throw new Error(`modal '${id}' not found`);
     }
+    return modal.isOpen.asReadonly();
+  }
+  open(id: string) {
 
+    const modal = this.modals.find(x => x.id === id);
+
+    if (!modal) {
+      throw new Error(`modal '${id}' not found`);
+    }
     modal.open();
+
   }
 
   close() {
     // close the modal that is currently open
     const modal = this.modals.find(x => x.isOpen);
     modal?.close();
+
   }
 }

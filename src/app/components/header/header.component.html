@@ -10,31 +10,27 @@
             <nav class="nav">
                 <ul>
                     <li (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
-                        <a routerLink="">
+                        <a >
                             <ng-icon name="heroUser">
                             </ng-icon>
                             Conta
                         </a>
-
-                        <!-- Novo elemento div para encapsular o conteúdo do dropdown -->
                         @if(showDropdown){
                         <ul class="dropdown-menu" (mouseenter)="showDropdown = true"
                             (mouseleave)="showDropdown = false">
-                            <a (click)="modalservice.open('modal-login')">
+                            <a (click)="loadFormLoginComponent()">
                                 Login
                             </a>
-                            <a routerLink=" /produtos">
+                            <a (click)="loadFormRegisterComponent()">
                                 Registrar
                             </a>
                         </ul>
                         }
-
                     </li>
                     <li>
-                        <a routerLink="/produtos">
+                        <a routerLink="/wishlist">
                             <ng-icon name="bootstrapHeart"></ng-icon>
                             Lista de Desejos
-
                         </a>
                     </li>
                     <li>
@@ -62,6 +58,6 @@
 @if(IsShowSideCart){
 <app-sidecart (clickExit)="SetSideCart()"></app-sidecart>
 }
-<app-modal id="modal-login">
-    <app-formlogin></app-formlogin>
+<app-modal id="modal">
+    <ng-template appDynamicComponentDirective></ng-template>
 </app-modal>

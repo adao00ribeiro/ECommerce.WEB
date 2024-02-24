@@ -1,0 +1,16 @@
+:host{
+  flex: 1;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .wishlist-container{
+    max-width: 1170px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+}

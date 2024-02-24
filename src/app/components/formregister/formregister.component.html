@@ -1,0 +1,43 @@
+<h2>Registrar</h2>
+<form>
+    <div class="form-group">
+        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Sobre Nome">
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Telefone">
+    </div>
+    <input type="text" placeholder="Endereço">
+    <div class="form-group">
+        <select aria-label="Default select example">
+            <option selected="">City</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <input type="text" placeholder="Post Code" class="cr-form-control">
+    </div>
+    <div class="form-group">
+        <select class="cr-form-control" aria-label="Default select example">
+            <option selected="">Country</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <select class="cr-form-control" aria-label="Default select example">
+            <option selected="">Region/State</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+
+    <button type="button" class="button-primary">Registrar</button>
+
+    <a (click)="loadFormLoginComponent()" class="link">
+        Ja possui uma conta?
+    </a>
+
+
+</form>

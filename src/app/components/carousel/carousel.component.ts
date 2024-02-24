@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICaroselImage } from './interface/ICaroselImage';
 import { CommonModule } from '@angular/common';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { bootstrapArrowLeftCircle ,bootstrapArrowRightCircle} from '@ng-icons/bootstrap-icons'
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgIconComponent],
+  viewProviders: [provideIcons({bootstrapArrowLeftCircle,bootstrapArrowRightCircle })],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
@@ -23,11 +26,9 @@ export class CarouselComponent implements OnInit {
   }
   prevSlide() {
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    console.log(this.currentIndex)
   }
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    console.log(this.currentIndex)
   }
 }
