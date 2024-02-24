@@ -1,5 +1,6 @@
+import { ProductService } from './../../services/Product.service';
 import { OurserviceComponent } from './../../components/ourservice/ourservice.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CarouselComponent } from '../../components/carousel/carousel.component';
 import { CarditemComponent } from '../../components/carditem/carditem.component';
@@ -14,8 +15,10 @@ import { BrandsComponent } from '../../components/brands/brands.component';
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-
+export class HomeComponent implements OnInit{
+  data : any
+  productNews: IProduct[] =[]
+  /*
     productNews: IProduct[] = [
         {
             id: 1,
@@ -54,4 +57,11 @@ export class HomeComponent {
             imageUrl: "https://m.media-amazon.com/images/I/417S18ZulVL._AC_SX679_.jpg"
         }
     ];
+    */
+    constructor(private  productService: ProductService){
+
+    }
+  ngOnInit(): void {
+    this.productService.GetAll().then(data =>this.productNews = data )
+  }
 }
