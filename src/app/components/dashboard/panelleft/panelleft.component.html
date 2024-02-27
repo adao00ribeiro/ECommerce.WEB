@@ -4,33 +4,29 @@
   </div>
 
   <div class="menu-container flex opcoes">
-    <app-buttonmenu
-    [descricao]="'Dashboard'"
-    [selecionado]="menuSelecionado === 'Home'"
-    (click)="botaoClick('Home')"
-    >
+    <app-buttonmenu [descricao]="'Dashboard'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
 
-    <app-buttonmenu
-    [descricao]="'Produtos'"
-    [selecionado]="menuSelecionado === 'Home'"
-    (click)="botaoClick('Home')"
-    >
+    <app-buttonmenu [descricao]="'Categorias'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
 
 
-    <app-buttonmenu
-    [descricao]="'Ordens'"
-    [selecionado]="menuSelecionado === 'Home'"
-    (click)="botaoClick('Home')"
-    >
+    <app-buttonmenu [descricao]="'Produtos'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
-
-    <app-buttonmenu
-    [descricao]="'Sair'"
-    [selecionado]="menuSelecionado === 'Home'"
-    (click)="botaoClick('Home')"
-    >
+    <app-buttonmenu [descricao]="'Usuarios'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
+    </app-buttonmenu>
+    <app-buttonmenu [descricao]="'Funcões'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
+    </app-buttonmenu>
+    <app-buttonmenu [descricao]="'Ordens'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
+    </app-buttonmenu>
+    <app-buttonmenu [descricao]="'Sair'" [selecionado]="menuSelecionado === 'Home'" (click)="botaoClick('Home')">
+      <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
   </div>
 
@@ -47,4 +43,3 @@
   </div>
 
 </div>
-
