@@ -7,6 +7,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { DefaultlayoutComponent } from './pages/defaultlayout/defaultlayout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomedashboardComponent } from './components/dashboard/homedashboard/homedashboard.component';
 
 export const routes: Routes = [
   {
@@ -41,7 +42,17 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
+    redirectTo: 'admin/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin',
     component: DashboardComponent,
-
+    children: [
+      {
+        path: 'home',
+        component: HomedashboardComponent
+      },
+    ]
   }
 ];
