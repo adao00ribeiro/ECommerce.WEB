@@ -4,11 +4,12 @@ import { PanelleftComponent } from '../../components/dashboard/panelleft/panelle
 import { RouterOutlet, provideRouter } from '@angular/router';
 
 import { HomedashboardComponent } from '../../components/dashboard/homedashboard/homedashboard.component';
+import { HeaderdashboardComponent } from '../../components/dashboard/headerdashboard/headerdashboard.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [PanelleftComponent, RouterOutlet, HomedashboardComponent],
+  imports: [PanelleftComponent, RouterOutlet, HomedashboardComponent, HeaderdashboardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
