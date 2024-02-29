@@ -1,11 +1,10 @@
 :host {
     display: flex;
-    height: 100vh;
 
     .rotas-container {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+
     }
 }

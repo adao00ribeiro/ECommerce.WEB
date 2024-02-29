@@ -12,19 +12,16 @@ export class ButtonmenuComponent {
   @Input()
   descricao = '';
 
-  @Input()
-  selecionado = false;
-
   @Output()
-  click = new EventEmitter<void>();
+  buttonclick = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClick(){
-    this.click.emit();
+  onClick(event: MouseEvent) {
+    this.buttonclick.emit();
   }
 
 }

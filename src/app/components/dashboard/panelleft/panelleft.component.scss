@@ -8,6 +8,8 @@ $h-footer-user: 70px;
 $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
 
 :host {
+
+  position: fixed;
   max-width: 300px;
   min-height: 100vh;
   padding: 1rem;

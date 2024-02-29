@@ -3,22 +3,24 @@
 
 
 :host {
-    width: 100%;
-    height:50px;
-    border-bottom: 1px solid $color-background-second;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    gap: 1rem;
-    padding: 0.5rem;
-      img{
-        width: 35px;
-        height: 35px;
-        border-radius: 5rem;
-      }
-      ng-icon{
-        font-size: 2rem;
-      }
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid $color-background-second;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0.5rem;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5rem;
+  }
+
+  ng-icon {
+    font-size: 2rem;
+  }
 
 }

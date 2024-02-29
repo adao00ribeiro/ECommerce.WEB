@@ -1,7 +1,4 @@
-<button type="button"
-  [class.selecionado]="selecionado"
-  (click)="onClick()"
->
+<button type="button" class="selecionado" (click)="onClick($event)">
   <ng-content></ng-content>
   <span>{{ descricao }} </span>
 </button>
