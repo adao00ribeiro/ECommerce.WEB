@@ -8,6 +8,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { DefaultlayoutComponent } from './pages/defaultlayout/defaultlayout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomedashboardComponent } from './components/dashboard/homedashboard/homedashboard.component';
+import { AddproductComponent } from './components/dashboard/addproduct/addproduct.component';
 
 export const routes: Routes = [
   {
@@ -52,6 +53,10 @@ export const routes: Routes = [
       {
         path: 'home',
         component: HomedashboardComponent
+      },
+      {
+        path: 'product',
+        component: AddproductComponent
       },
     ]
   }
