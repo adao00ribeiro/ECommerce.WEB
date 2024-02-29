@@ -47,6 +47,9 @@ dependencies:
   '@ng-icons/heroicons':
     specifier: ^26.5.0
     version: 26.5.0
+  '@ng-icons/ionicons':
+    specifier: ^27.1.0
+    version: 27.1.0
   rxjs:
     specifier: ~7.8.0
     version: 7.8.0
@@ -2214,6 +2217,12 @@ packages:
 
   /@ng-icons/heroicons@26.5.0:
     resolution: {integrity: sha512-hdyY0ZFZe4D+ELuPXdE3StLGr9+avwtjT+A7FedcFoYyNotvLwMTefnA/1I2KfcCGoE5qGt2uRzS9O45fw86MQ==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
+
+  /@ng-icons/ionicons@27.1.0:
+    resolution: {integrity: sha512-ZQ5ZmhdQ5NLVQWKABwqydSsohGfxaNti9J6dlOG6KQTHi9MwUbqo0WWkryc6eHgS7HtY8mVM9tgkOIDzTzUsvQ==}
     dependencies:
       tslib: 2.6.2
     dev: false
@@ -5940,6 +5949,7 @@ packages:
   /pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -6087,6 +6097,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -6406,6 +6417,7 @@ packages:
 
   /sax@1.3.0:
     resolution: {integrity: sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -6443,6 +6455,7 @@ packages:
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
+    requiresBuild: true
     dev: true
     optional: true
 
