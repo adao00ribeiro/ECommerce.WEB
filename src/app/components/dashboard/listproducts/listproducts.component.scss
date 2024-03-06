@@ -1,0 +1,22 @@
+:host {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .container-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      height: 35px;
+    }
+  }
+
+  .container-body{
+    table{
+      width: 100%;
+    }
+  }
+}
