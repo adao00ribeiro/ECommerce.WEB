@@ -29,11 +29,25 @@ export class PanelleftComponent {
   }
 
   botaoClick(botao: string) {
-    this.menuSelecionado = botao;
+
     this.router.navigateByUrl('player/home');
   }
 
+  colapseClick(id: string) {
+    const collapseElement = document.getElementById(id);
+    if (collapseElement) {
+
+      console.log(collapseElement.style.display)
 
 
+      if (collapseElement.style.display === "none") {
+        collapseElement.style.display = "block";
+
+      } else {
+        collapseElement.style.display = "none";
+
+      }
+    }
+  }
 
 }
