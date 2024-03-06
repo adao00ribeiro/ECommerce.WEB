@@ -9,6 +9,7 @@ import { DefaultlayoutComponent } from './pages/defaultlayout/defaultlayout.comp
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomedashboardComponent } from './components/dashboard/homedashboard/homedashboard.component';
 import { AddproductComponent } from './components/dashboard/addproduct/addproduct.component';
+import { ListproductsComponent } from './components/dashboard/listproducts/listproducts.component';
 
 export const routes: Routes = [
   {
@@ -55,8 +56,12 @@ export const routes: Routes = [
         component: HomedashboardComponent
       },
       {
-        path: 'product',
+        path: 'addproduct',
         component: AddproductComponent
+      },
+      {
+        path: 'products',
+        component: ListproductsComponent
       },
     ]
   }
