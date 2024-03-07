@@ -10,7 +10,7 @@ $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
 :host {
 
   position: fixed;
-  max-width: 300px;
+  max-width: 250px;
   min-height: 100vh;
   padding: 1rem;
   overflow-y: hidden;

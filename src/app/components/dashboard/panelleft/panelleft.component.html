@@ -4,13 +4,12 @@
   </div>
 
   <div class="menu-container flex opcoes">
-    <app-buttonmenu [descricao]="'Dashboard'" (click)="botaoClick('Home')">
+    <app-buttonmenu [descricao]="'Dashboard'" (buttonclick)="botaoClick('/admin/home')">
       <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
     <app-buttonmenu [descricao]="'Categorias'" (buttonclick)="colapseClick('categorys')">
       <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
-
 
     <div id="categorys" style="display: none;">
       <ul class="sub-menu" data-parent="#sidebar-menu">
@@ -26,9 +25,23 @@
         </li>
       </ul>
     </div>
-    <app-buttonmenu [descricao]="'Produtos'" (click)="colapseClick('')">
+    <app-buttonmenu [descricao]="'Produtos'" (click)="colapseClick('produtos')">
       <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
+    <div id="produtos" style="display: none;">
+      <ul class="sub-menu" data-parent="#sidebar-menu">
+        <li>
+          <a routerLink="/admin/products">
+            <span>Produtos</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/addproduct">
+            <span>Add Produto</span>
+          </a>
+        </li>
+      </ul>
+    </div>
     <app-buttonmenu [descricao]="'Usuarios'" (click)="botaoClick('Home')">
       <ng-icon name="bootstrapGrid"></ng-icon>
     </app-buttonmenu>
