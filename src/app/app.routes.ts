@@ -12,6 +12,8 @@ import { AddproductComponent } from './components/dashboard/addproduct/addproduc
 import { ListproductsComponent } from './components/dashboard/listproducts/listproducts.component';
 import { OrderdetailsComponent } from './components/dashboard/orderdetails/orderdetails.component';
 import { OrdersComponent } from './components/dashboard/orders/orders.component';
+import { AddcategoryComponent } from './components/dashboard/addcategory/addcategory.component';
+import { CategorysComponent } from './components/dashboard/categorys/categorys.component';
 
 export const routes: Routes = [
   {
@@ -56,6 +58,14 @@ export const routes: Routes = [
       {
         path: 'home',
         component: HomedashboardComponent
+      },
+      {
+        path: 'addcategory',
+        component: AddcategoryComponent
+      },
+      {
+        path: 'categorys',
+        component: CategorysComponent
       },
       {
         path: 'addproduct',
