@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IDynamicComponent } from '../../Interface/IDynamicComponent';
 import { RouterLink } from '@angular/router';
-import { DynamicComponentService } from '../../services/DynamicComponent.service';
+import { DynamicComponentService } from '../../services/dynamicComponent/DynamicComponent.service';
 import { FormloginComponent } from '../formlogin/formlogin.component';
 
 @Component({

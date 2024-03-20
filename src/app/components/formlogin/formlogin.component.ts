@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IDynamicComponent } from '../../Interface/IDynamicComponent';
-import { DynamicComponentService } from '../../services/DynamicComponent.service';
+import { DynamicComponentService } from '../../services/dynamicComponent/DynamicComponent.service';
 import { FormregisterComponent } from '../formregister/formregister.component';
 
 @Component({

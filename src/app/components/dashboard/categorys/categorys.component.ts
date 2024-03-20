@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../../services/category/category.service';
 @Component({
   selector: 'app-categorys',
   standalone: true,
@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
   templateUrl: './categorys.component.html',
   styleUrl: './categorys.component.scss'
 })
-export class CategorysComponent {
+export class CategorysComponent implements OnInit {
+
+
+  constructor(private categoryService: CategoryService) {
+
+  }
+  ngOnInit(): void {
+    this.categoryService.GetAll().then(data => console.log(data));
+  }
+
+
 
 }

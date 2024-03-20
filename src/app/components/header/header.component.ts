@@ -7,11 +7,11 @@ import { InputsearchComponent } from '../inputsearch/inputsearch.component';
 import { SidecartComponent } from '../sidecart/sidecart.component';
 import { ModalComponent } from '../modal/modal.component';
 import { FormloginComponent } from '../formlogin/formlogin.component';
-import { ModalService } from '../../services/modal.service';
+import { ModalService } from '../../services/modal/modal.service';
 import { IDynamicComponent } from '../../Interface/IDynamicComponent';
 import { FormregisterComponent } from '../formregister/formregister.component';
 import { DynamicComponentDirective } from '../../Directives/DynamicComponent.directive';
-import { DynamicComponentService } from '../../services/DynamicComponent.service';
+import { DynamicComponentService } from '../../services/dynamicComponent/DynamicComponent.service';
 @Component({
   selector: 'app-header',
   standalone: true,
