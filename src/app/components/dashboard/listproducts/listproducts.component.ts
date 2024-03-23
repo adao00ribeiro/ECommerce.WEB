@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { IProduct } from '../../../mock/IProduct';
+import { ProductsService } from '../../../mock/products.service';
 
 
 @Component({
@@ -9,11 +12,16 @@ import { RouterLink } from '@angular/router';
   templateUrl: './listproducts.component.html',
   styleUrl: './listproducts.component.scss'
 })
-export class ListproductsComponent {
+export class ListproductsComponent implements OnInit {
 
+products : IProduct[] = []
 
+constructor(private readonly ProductService: ProductsService){
 
-
+}
+  ngOnInit(): void {
+    this.products = this.ProductService.getAllProducts();
+  }
 
 
 
