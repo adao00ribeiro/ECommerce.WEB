@@ -1,7 +1,5 @@
 @import 'variables';
 
-
-
 :host {
   width: 100%;
   height: 50px;
@@ -10,8 +8,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: end;
-  gap: 1rem;
-  padding: 0.5rem;
+  gap: 1.5rem;
+  padding: 2rem;
 
   img {
     width: 35px;
@@ -20,6 +18,7 @@
   }
 
   ng-icon {
+
     font-size: 2rem;
   }
 

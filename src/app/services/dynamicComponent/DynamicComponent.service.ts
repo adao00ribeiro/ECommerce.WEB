@@ -1,5 +1,5 @@
 import { Injectable, Type, ViewChild, ViewContainerRef, signal } from '@angular/core';
-import { FormloginComponent } from '../components/formlogin/formlogin.component';
+import { FormloginComponent } from '../../components/formlogin/formlogin.component';
 
 
 @Injectable({

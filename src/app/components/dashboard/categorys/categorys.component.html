@@ -1,0 +1,24 @@
+<div class="container-top">
+  <h2>Todos os Produtos</h2>
+  <a routerLink="/admin/addproduct">Add Produto</a>
+
+</div>
+<br>
+<div class="container-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="w-5">Nome</th>
+        <th class="">Slug</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of categorys; track $index) {
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.slug }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

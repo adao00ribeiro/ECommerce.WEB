@@ -1,12 +1,16 @@
 :host {
   display: block;
   width: 100vw;
-  height: 100vh;
-    .rotas-container {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        margin-left: 18.8rem;
+  height: 100%;
 
-    }
+
+  .rotas-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 15.6rem;
+
+
+  }
 }
