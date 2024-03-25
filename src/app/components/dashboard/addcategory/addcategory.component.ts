@@ -11,15 +11,11 @@ import { Component } from '@angular/core';
 })
 export class AddcategoryComponent {
 
-
 constructor(protected readonly CategoryService : CategoryService){}
 
 async AddCategory(event: Event){
   event.preventDefault();
 
 }
-form = new FormGroup({
-  nome: new FormControl(''),
-});
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IOrder } from '../../../Interface/IOrder';
 
 @Component({
   selector: 'app-orders',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './orders.component.scss'
 })
 export class OrdersComponent {
-
+  orders : IOrder[] = [];
 }
