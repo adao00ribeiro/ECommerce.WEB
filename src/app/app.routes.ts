@@ -14,6 +14,7 @@ import { OrderdetailsComponent } from './components/dashboard/orderdetails/order
 import { OrdersComponent } from './components/dashboard/orders/orders.component';
 import { AddcategoryComponent } from './components/dashboard/addcategory/addcategory.component';
 import { CategorysComponent } from './components/dashboard/categorys/categorys.component';
+import { ProductdetailComponent } from './pages/productdetail/productdetail.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +44,10 @@ export const routes: Routes = [
       {
         path: 'wishlist',
         component: WishlistComponent
+      },
+      {
+        path: 'productdetail',
+        component: ProductdetailComponent
       },
     ]
   },

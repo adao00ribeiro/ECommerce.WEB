@@ -1,0 +1,59 @@
+@import 'variables';
+
+.max1170 {
+    max-width: 1170px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section-primary {
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+
+    .grid-images {
+        width: 150px;
+        height: 100%;
+        position: relative;
+        display: grid;
+        gap: 0.5rem;
+
+
+        img {
+            padding: 0.5rem;
+            border: 1px solid gray;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    .container-image {
+        position: relative;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    .container-info {
+
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 2rem;
+        }
+    }
+}
